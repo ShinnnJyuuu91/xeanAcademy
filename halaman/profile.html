@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Xea Academy : Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="../public/style.css" />
+  </head>
+  <style>
+    #particles-js {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+  </style>
+
+  <body class="galaxy-bg text-[#F1E9E9] font-sans overflow-x-hidden">
+    <div id="particles-js"></div>
+
+    <div class="fixed top-6 left-1/2 -translate-x-1/2 w-[90%] md:w-[80%] z-50">
+      <div
+        class="glass-nav rounded-2xl px-6 py-4 flex justify-between items-center">
+        <h1 class="text-xl font-bold tracking-wider">
+          <i class="fa-brands fa-discord text-[#E491C9]"></i> Xean Academy
+        </h1>
+
+        <ul class="hidden md:flex gap-8 text-sm">
+          <li class="hover:text-[#E491C9] cursor-pointer">
+            <a href="../index.html" style="text-decoration: none">Home</a>
+          </li>
+          <li class="hover:text-[#E491C9] cursor-pointer"><a href="./event.html" style="text-decoration: none;">Event</a></li>
+          <li class="hover:text-[#E491C9] cursor-pointer"><a href="./information.html" style="text-decoration: none">Information</a></li>
+          <li class="hover:text-[#E491C9] cursor-pointer">Profile</li>
+        </ul>
+        <div id="burger" class="burger md:hidden cursor-pointer space-y-1">
+          <div class="w-6 h-0.5 bg-white"></div>
+          <div class="w-6 h-0.5 bg-white"></div>
+          <div class="w-6 h-0.5 bg-white"></div>
+        </div>
+      </div>
+      <div
+        id="mobileMenu"
+        class="hidden glass-nav mt-2 rounded-2xl p-6 md:hidden text-center space-y-4">
+        <p><a href="../index.html" style="text-decoration: none;">Home</a></p>
+        <p><a href="./event.html" style="text-decoration: none;">Event</a></p>
+        <p><a href="./information.html" style="text-decoration: none;">Information</a></p>
+        <p>Profile</p>
+      </div>
+    </div>
+    <section class="py-20 text-center">
+      <br />
+      <h2 class="text-4xl md:text-6xl font-extrabold mb-6">
+        Meet The <span class="text-[#E491C9]">Team</span>
+      </h2>
+
+      <div class="flex justify-center">
+        <div
+          id="profileCard"
+          class="bg-white/10 backdrop-blur-lg p-8 rounded-3xl shadow-2xl w-72 transition-all duration-700 ease-in-out overflow-hidden">
+          <div
+            id="profileContent"
+            class="flex flex-col items-center transition-all duration-700">
+            <!-- LEFT SIDE -->
+            <div id="leftSide" class="flex flex-col items-center">
+              <div
+                class="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-4 border-purple-500">
+                <img
+                  src="https://cdn.discordapp.com/embed/avatars/0.png"
+                  alt="Founder Avatar"
+                  class="w-full h-full object-cover" />
+              </div>
+
+              <h3 class="text-xl font-semibold text-white">BarDev</h3>
+              <p class="text-purple-400 mt-2">Founder • Developer • Designer</p>
+
+              <!-- BUTTON -->
+              <button
+                onclick="toggleExpand()"
+                class="mt-6 px-6 py-2 bg-[#E491C9] text-black rounded-full hover:scale-105 transition-all duration-300">
+                View Work
+              </button>
+            </div>
+
+            <!-- RIGHT SIDE (Hidden Awal) -->
+            <div
+              id="rightSide"
+              class="opacity-0 max-h-0 overflow-hidden transition-all duration-700 mt-0 text-left text-white">
+              <h4 class="text-2xl font-bold mb-4 text-[#E491C9]">What I Do</h4>
+              <p class="text-gray-300 leading-relaxed">
+                I built the entire platform from scratch. Designed the UI/UX,
+                developed backend systems, created interactive features,
+                optimized performance, and handled deployment. Full-stack
+                development, server management, design system creation, and
+                continuous feature updates — all crafted solo.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="py-10 text-center text-gray-200">© 2026 Xean Academy</footer>
+
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+    <script>
+      let expanded = false;
+
+      function toggleExpand() {
+        const card = document.getElementById("profileCard");
+        const content = document.getElementById("profileContent");
+        const rightSide = document.getElementById("rightSide");
+
+        expanded = !expanded;
+
+        if (expanded) {
+          card.classList.remove("w-72");
+          card.classList.add("w-[700px]");
+
+          content.classList.remove("flex-col", "items-center");
+          content.classList.add("flex-row", "gap-10", "items-start");
+
+          rightSide.classList.remove("opacity-0", "max-h-0");
+          rightSide.classList.add("opacity-100", "max-h-[500px]", "mt-0");
+        } else {
+          card.classList.remove("w-[700px]");
+          card.classList.add("w-70");
+
+          content.classList.remove("flex-row", "gap-10", "items-start");
+          content.classList.add("flex-col", "items-center");
+
+          rightSide.classList.add("opacity-0", "max-h-0");
+          rightSide.classList.remove("opacity-100", "max-h-[500px]");
+        }
+      }
+    </script>
+    <script>
+      particlesJS("particles-js", {
+        particles: {
+          number: { value: 80, density: { enable: true, value_area: 800 } },
+          color: { value: "#ffffff" },
+          shape: {
+            type: "circle",
+            stroke: { width: 0, color: "#000000" },
+            polygon: { nb_sides: 5 },
+            image: { src: "img/github.svg", width: 100, height: 100 },
+          },
+          opacity: {
+            value: 0.5,
+            random: false,
+            anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false },
+          },
+          size: {
+            value: 3,
+            random: true,
+            anim: { enable: false, speed: 40, size_min: 0.1, sync: false },
+          },
+          line_linked: {
+            enable: true,
+            distance: 150,
+            color: "#ffffff",
+            opacity: 0.4,
+            width: 1,
+          },
+          move: {
+            enable: true,
+            speed: 2,
+            direction: "none",
+            random: false,
+            straight: false,
+            out_mode: "out",
+            bounce: false,
+            attract: { enable: false, rotateX: 600, rotateY: 1200 },
+          },
+        },
+        interactivity: {
+          detect_on: "canvas",
+          events: {
+            onhover: { enable: true, mode: "repulse" },
+            onclick: { enable: false, mode: "push" },
+            resize: true,
+          },
+          modes: {
+            grab: { distance: 400, line_linked: { opacity: 1 } },
+            bubble: {
+              distance: 400,
+              size: 40,
+              duration: 2,
+              opacity: 8,
+              speed: 10,
+            },
+            repulse: { distance: 200, duration: 0.4 },
+            push: { particles_nb: 4 },
+            remove: { particles_nb: 2 },
+          },
+        },
+        retina_detect: true,
+      });
+      var count_particles, stats, update;
+      stats = new Stats();
+      stats.setMode(0);
+      stats.domElement.style.position = "absolute";
+      stats.domElement.style.left = "0px";
+      stats.domElement.style.top = "0px";
+      document.body.appendChild(stats.domElement);
+      update = function () {
+        stats.begin();
+        stats.end();
+        if (
+          window.pJSDom[0].pJS.particles &&
+          window.pJSDom[0].pJS.particles.array
+        ) {
+          count_particles.innerText =
+            window.pJSDom[0].pJS.particles.array.length;
+        }
+        requestAnimationFrame(update);
+      };
+      requestAnimationFrame(update);
+    </script>
+    <script>
+      const burger = document.getElementById("burger");
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      burger.addEventListener("click", () => {
+        burger.classList.toggle("active");
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      const reveals = document.querySelectorAll(".reveal");
+
+      window.addEventListener("scroll", () => {
+        reveals.forEach((reveal) => {
+          const windowHeight = window.innerHeight;
+          const elementTop = reveal.getBoundingClientRect().top;
+          if (elementTop < windowHeight - 100) {
+            reveal.classList.add("active");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

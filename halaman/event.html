@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Xea Academy : Event</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="../public/style.css" />
+  </head>
+  <style>
+    #particles-js {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+  </style>
+
+  <body class="galaxy-bg text-[#F1E9E9] font-sans overflow-x-hidden">
+    <div id="particles-js"></div>
+
+    <div class="fixed top-6 left-1/2 -translate-x-1/2 w-[90%] md:w-[80%] z-50">
+      <div
+        class="glass-nav rounded-2xl px-6 py-4 flex justify-between items-center">
+        <h1 class="text-xl font-bold tracking-wider">
+          <i class="fa-brands fa-discord text-[#E491C9]"></i> Xean Academy
+        </h1>
+
+        <ul class="hidden md:flex gap-8 text-sm">
+          <li class="hover:text-[#E491C9] cursor-pointer">
+            <a href="../index.html" style="text-decoration: none">Home</a>
+          </li>
+          <li class="hover:text-[#E491C9] cursor-pointer"><a href="./event.html" style="text-decoration: none;">Event</a></li>
+          <li class="hover:text-[#E491C9] cursor-pointer">
+            <a href="./information.html" style="text-decoration: none"
+              >Information</a
+            >
+          </li>
+          <li class="hover:text-[#E491C9] cursor-pointer">
+            <a href="./profile.html" style="text-decoration: none">Profile</a>
+          </li>
+        </ul>
+        <div id="burger" class="burger md:hidden cursor-pointer space-y-1">
+          <div class="w-6 h-0.5 bg-white"></div>
+          <div class="w-6 h-0.5 bg-white"></div>
+          <div class="w-6 h-0.5 bg-white"></div>
+        </div>
+      </div>
+      <div
+        id="mobileMenu"
+        class="hidden glass-nav mt-2 rounded-2xl p-6 md:hidden text-center space-y-4">
+        <p><a href="../index.html" style="text-decoration: none">Home</a></p>
+        <p>Event</p>
+        <p>
+          <a href="./information.html" style="text-decoration: none"
+            >Information</a
+          >
+        </p>
+        <p><a href="./profile.html" style="text-decoration: none;">Profile</a></p>
+      </div>
+    </div>
+    <section
+      class="min-h-screen flex items-center justify-center px-6 relative">
+      <div class="grid md:grid-cols-2 gap-10 items-center max-w-6xl">
+        <!-- LEFT SIDE -->
+        <div class="reveal space-y-6">
+          <h2 class="text-4xl md:text-6xl font-extrabold leading-tight">
+            Xean Academy <span class="text-[#E491C9]">Discord Events</span>
+          </h2>
+
+          <p class="text-gray-300">
+            Ikuti berbagai event seru di server! Mulai dari ngobrol santai,
+            sharing skill, sampai event kompetitif bareng member lainnya.
+          </p>
+
+          <div class="flex gap-4">
+            <a href="#" class="glow-btn px-8 py-3 rounded-full font-semibold">
+              Lihat Event
+            </a>
+            <a
+              href="#"
+              class="border border-[#E491C9] px-8 py-3 rounded-full hover:bg-[#982598] transition">
+              Join Discord
+            </a>
+          </div>
+        </div>
+
+        <!-- RIGHT SIDE EVENT LIST -->
+        <div class="reveal relative">
+          <div
+            class="glass-nav p-8 rounded-3xl shadow-2xl relative overflow-hidden">
+            <div
+              class="absolute -top-10 -right-10 w-40 h-40 bg-[#982598] opacity-20 blur-3xl rounded-full"></div>
+
+            <h3 class="text-2xl font-bold mb-6 text-[#E491C9]">
+              Upcoming Events
+            </h3>
+
+            <div class="space-y-6 text-gray-200">
+              <!-- EVENT 1 -->
+              <div class="flex items-start gap-4">
+                <i class="fa-solid fa-microphone text-[#E491C9] mt-1"></i>
+                <div>
+                  <p class="font-semibold">Weekly Sharing Session</p>
+                  <p class="text-sm text-gray-300">
+                    Member bebas sharing skill, pengalaman, dan diskusi santai.
+                  </p>
+                </div>
+              </div>
+
+              <!-- EVENT 2 -->
+              <div class="flex items-start gap-4">
+                <i class="fa-solid fa-gamepad text-[#E491C9] mt-1"></i>
+                <div>
+                  <p class="font-semibold">Game Night</p>
+                  <p class="text-sm text-gray-300">
+                    Main bareng, mabar, dan seru-seruan di voice channel.
+                  </p>
+                </div>
+              </div>
+
+              <!-- EVENT 3 -->
+              <div class="flex items-start gap-4">
+                <i class="fa-solid fa-trophy text-[#E491C9] mt-1"></i>
+                <div>
+                  <p class="font-semibold">Mini Competition</p>
+                  <p class="text-sm text-gray-300">
+                    Event lomba kecil dengan hadiah dan role spesial.
+                  </p>
+                </div>
+              </div>
+
+              <!-- EVENT 4 -->
+              <div class="flex items-start gap-4">
+                <i class="fa-solid fa-user-group text-[#E491C9] mt-1"></i>
+                <div>
+                  <p class="font-semibold">Mutual & Networking Day</p>
+                  <p class="text-sm text-gray-300">
+                    Cari teman baru, mutualan, dan bangun koneksi di komunitas.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="py-10 text-center text-gray-200">© 2026 Xean Academy</footer>
+
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+    <script>
+      particlesJS("particles-js", {
+        particles: {
+          number: { value: 80, density: { enable: true, value_area: 800 } },
+          color: { value: "#ffffff" },
+          shape: {
+            type: "circle",
+            stroke: { width: 0, color: "#000000" },
+            polygon: { nb_sides: 5 },
+            image: { src: "img/github.svg", width: 100, height: 100 },
+          },
+          opacity: {
+            value: 0.5,
+            random: false,
+            anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false },
+          },
+          size: {
+            value: 3,
+            random: true,
+            anim: { enable: false, speed: 40, size_min: 0.1, sync: false },
+          },
+          line_linked: {
+            enable: true,
+            distance: 150,
+            color: "#ffffff",
+            opacity: 0.4,
+            width: 1,
+          },
+          move: {
+            enable: true,
+            speed: 2,
+            direction: "none",
+            random: false,
+            straight: false,
+            out_mode: "out",
+            bounce: false,
+            attract: { enable: false, rotateX: 600, rotateY: 1200 },
+          },
+        },
+        interactivity: {
+          detect_on: "canvas",
+          events: {
+            onhover: { enable: true, mode: "repulse" },
+            onclick: { enable: false, mode: "push" },
+            resize: true,
+          },
+          modes: {
+            grab: { distance: 400, line_linked: { opacity: 1 } },
+            bubble: {
+              distance: 400,
+              size: 40,
+              duration: 2,
+              opacity: 8,
+              speed: 10,
+            },
+            repulse: { distance: 200, duration: 0.4 },
+            push: { particles_nb: 4 },
+            remove: { particles_nb: 2 },
+          },
+        },
+        retina_detect: true,
+      });
+      var count_particles, stats, update;
+      stats = new Stats();
+      stats.setMode(0);
+      stats.domElement.style.position = "absolute";
+      stats.domElement.style.left = "0px";
+      stats.domElement.style.top = "0px";
+      document.body.appendChild(stats.domElement);
+      update = function () {
+        stats.begin();
+        stats.end();
+        if (
+          window.pJSDom[0].pJS.particles &&
+          window.pJSDom[0].pJS.particles.array
+        ) {
+          count_particles.innerText =
+            window.pJSDom[0].pJS.particles.array.length;
+        }
+        requestAnimationFrame(update);
+      };
+      requestAnimationFrame(update);
+    </script>
+    <script>
+      const burger = document.getElementById("burger");
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      burger.addEventListener("click", () => {
+        burger.classList.toggle("active");
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      const reveals = document.querySelectorAll(".reveal");
+
+      window.addEventListener("scroll", () => {
+        reveals.forEach((reveal) => {
+          const windowHeight = window.innerHeight;
+          const elementTop = reveal.getBoundingClientRect().top;
+          if (elementTop < windowHeight - 100) {
+            reveal.classList.add("active");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

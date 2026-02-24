@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Xea Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="./public/style.css" />
+  </head>
+  <style>
+    #particles-js {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+  </style>
+
+  <body class="galaxy-bg text-[#F1E9E9] font-sans overflow-x-hidden">
+    <!-- INTRO SCREEN -->
+    <div id="particles-js"></div>
+    <div
+      id="introScreen"
+      class="fixed inset-0 z-[9999] overflow-hidden bg-gradient-to-br from-[#0f1028] via-[#15173D] to-[#090a1a]">
+      <!-- PARTICLES BACKGROUND -->
+      <div id="introParticles" class="absolute inset-0"></div>
+
+      <!-- GLOW ORBS -->
+      <div
+        class="absolute -top-40 -left-40 w-[500px] h-[500px] bg-[#982598] opacity-20 blur-[180px] rounded-full animate-pulse"></div>
+      <div
+        class="absolute -bottom-40 -right-40 w-[500px] h-[500px] bg-[#E491C9] opacity-20 blur-[180px] rounded-full animate-pulse"></div>
+
+      <!-- SLIDER -->
+      <div
+        id="introSlider"
+        class="flex h-screen w-[200vw] transition-all duration-1000 ease-[cubic-bezier(.77,0,.18,1)]">
+        <!-- SLIDE 1 -->
+        <div
+          class="w-screen h-screen flex items-center justify-center relative px-6">
+          <div
+            class="text-center max-w-2xl opacity-0 translate-y-10 transition-all duration-1000"
+            id="slide1Content">
+            <h1
+              class="text-5xl md:text-6xl font-extrabold mb-6 text-[#E491C9] tracking-wide">
+              Welcome to Xean Academy
+            </h1>
+
+            <p class="text-gray-300 text-lg">
+              A new digital space where creativity, connection, and community
+              come together.
+            </p>
+          </div>
+
+          <button
+            id="nextSlide"
+            class="absolute bottom-10 right-10 text-3xl text-white animate-bounce hover:text-[#E491C9] transition">
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+
+        <!-- SLIDE 2 -->
+        <div class="w-screen h-screen flex items-center justify-center px-6">
+          <div
+            class="text-center max-w-3xl opacity-0 translate-y-10 transition-all duration-1000"
+            id="slide2Content">
+            <h2 class="text-4xl font-bold mb-6 text-[#E491C9] tracking-wide">
+              Official Website of Xean Academy
+            </h2>
+
+            <p class="text-gray-300 text-lg leading-relaxed mb-10">
+              This is the official website of Xean Academy. Here you can explore
+              upcoming events, community updates, important rules,
+              announcements, creative showcases, and everything related to our
+              growing ecosystem.
+              <br /><br />
+              Stay informed. Stay connected. Be part of the journey.
+            </p>
+
+            <button
+              id="openMain"
+              class="px-12 py-4 bg-[#E491C9] text-[#15173D] font-bold rounded-full hover:scale-105 hover:shadow-[0_0_30px_#E491C9] transition-all duration-300">
+              Open
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fixed top-6 left-1/2 -translate-x-1/2 w-[90%] md:w-[80%] z-50">
+      <div
+        class="glass-nav rounded-2xl px-6 py-4 flex justify-between items-center">
+        <h1 class="text-xl font-bold tracking-wider">
+          <i class="fa-brands fa-discord text-[#E491C9]"></i> Xean Academy
+        </h1>
+
+        <ul class="hidden md:flex gap-8 text-sm">
+          <li class="hover:text-[#E491C9] cursor-pointer">Home</li>
+          <li class="hover:text-[#E491C9] cursor-pointer">
+            <a href="./halaman/event.html" style="text-decoration: none"
+              >Event</a
+            >
+          </li>
+          <li class="hover:text-[#E491C9] cursor-pointer"><a href="./halaman/information.html" style="text-decoration: none;">Information</a></li>
+          <li class="hover:text-[#E491C9] cursor-pointer"><a href="./halaman/profile.html" style="text-decoration: none;">Profile</a></li>
+        </ul>
+        <div id="burger" class="burger md:hidden cursor-pointer space-y-1">
+          <div class="w-6 h-0.5 bg-white"></div>
+          <div class="w-6 h-0.5 bg-white"></div>
+          <div class="w-6 h-0.5 bg-white"></div>
+        </div>
+      </div>
+      <div
+        id="mobileMenu"
+        class="hidden glass-nav mt-2 rounded-2xl p-6 md:hidden text-center space-y-4">
+        <p>Home</p>
+        <p><a href="./halaman/information.html" style="text-decoration: none;">Information</a></p>
+        <p><a href="./halaman/event.html" style="text-decoration: none;">Event</a></p>
+        <p><a href="./halaman/profile.html" style="text-decoration: none;">Profile</a></p>
+      </div>
+    </div>
+    <section
+      class="min-h-screen flex items-center justify-center px-6 relative">
+      <div class="grid md:grid-cols-2 gap-10 items-center max-w-6xl">
+        <div class="reveal space-y-6">
+          <h2 class="text-4xl md:text-6xl font-extrabold leading-tight">
+            A New Era of <span class="text-[#E491C9]">Xean Academy</span>
+          </h2>
+
+          <p class="text-gray-300">
+            Disini kalian bisa mutuan,cari teman dan juga sharing karyakalian
+          </p>
+          <div class="flex gap-4">
+            <a href="https://discord.gg/zkg9Fn5q"  target="_blank" rel="noopener noreferrer" class="glow-btn px-8 py-3 rounded-full font-semibold">
+              Join Now
+            </a>
+            <a
+              href="./halaman/information.html"
+              class="border border-[#E491C9] px-8 py-3 rounded-full hover:bg-[#982598] transition">
+              Explore
+            </a>
+          </div>
+        </div>
+
+        <div class="reveal relative">
+          <div
+            class="glass-nav p-8 rounded-3xl shadow-2xl relative overflow-hidden">
+            <div
+              class="absolute -top-10 -right-10 w-40 h-40 bg-[#982598] opacity-20 blur-3xl rounded-full"></div>
+
+            <h3 class="text-2xl font-bold mb-6 text-[#E491C9]">
+              Early Access Phase
+            </h3>
+
+            <div class="space-y-5 text-gray-200">
+              <div class="flex items-start gap-4">
+                <i class="fa-solid fa-rocket text-[#E491C9] mt-1"></i>
+                <div>
+                  <p class="font-semibold">Launching Community</p>
+                  <p class="text-sm text-gray-300">
+                    Server masih dalam tahap awal pengembangan.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <i class="fa-solid fa-user-shield text-[#E491C9] mt-1"></i>
+                <div>
+                  <p class="font-semibold">Founding Members</p>
+                  <p class="text-sm text-gray-300">
+                    Kamu bisa jadi bagian dari member pertama yang membentuk
+                    culture.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-32 px-6 relative">
+      <div class="max-w-6xl mx-auto space-y-32">
+        <div class="reveal">
+          <h3 class="text-3xl font-bold mb-12 text-center text-[#E491C9]">
+            Creative Ecosystem
+          </h3>
+
+          <div class="grid md:grid-cols-3 gap-8">
+            <div
+              class="glass-nav p-8 rounded-3xl transition duration-300 hover:scale-105 hover:shadow-[0_0_30px_#98259840]">
+              <div class="mb-5 text-[#E491C9] text-3xl">
+                <i class="fa-solid fa-code"></i>
+              </div>
+              <h4 class="text-xl font-bold mb-3">Coding Hub</h4>
+              <p class="text-gray-300 text-sm leading-relaxed">
+                Tempat diskusi programming, sharing project, dan kolaborasi
+                development.
+              </p>
+            </div>
+
+            <div
+              class="glass-nav p-8 rounded-3xl transition duration-300 hover:scale-105 hover:shadow-[0_0_30px_#E491C940]">
+              <div class="mb-5 text-[#E491C9] text-3xl">
+                <i class="fa-solid fa-music"></i>
+              </div>
+              <h4 class="text-xl font-bold mb-3">Music & Art</h4>
+              <p class="text-gray-300 text-sm leading-relaxed">
+                Showcase karya musik, design, artwork, dan eksplorasi
+                kreativitas tanpa batas.
+              </p>
+            </div>
+
+            <div
+              class="glass-nav p-8 rounded-3xl transition duration-300 hover:scale-105 hover:shadow-[0_0_30px_#E491C940]">
+              <div class="mb-5 text-[#E491C9] text-3xl">
+                <i class="fa-solid fa-user-group"></i>
+              </div>
+              <h4 class="text-xl font-bold mb-3">Cari Teman & Mutualan</h4>
+              <p class="text-gray-300 text-sm leading-relaxed">
+                Temukan teman baru, mutualan, ngobrol santai, dan bangun koneksi
+                seru bareng member lainnya di server.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <h3 class="text-3xl font-bold mb-10 text-center text-[#E491C9]">
+            Xean Leaderboard
+          </h3>
+
+          <div class="glass-nav rounded-3xl overflow-hidden shadow-2xl">
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse">
+                <thead
+                  class="bg-[#15173D] text-[#E491C9] uppercase text-sm tracking-wider">
+                  <tr>
+                    <th class="p-5">Rank</th>
+                    <th class="p-5">User</th>
+                    <th class="p-5">XP</th>
+                    <th class="p-5">Level</th>
+                  </tr>
+                </thead>
+
+                <tbody class="text-gray-200">
+                  <tr
+                    class="border-t border-[#ffffff10] hover:bg-[#ffffff08] transition">
+                    <td class="p-5 font-bold text-yellow-400">
+                      <i class="fa-solid fa-crown"></i> #1
+                    </td>
+                    <td class="p-5">-</td>
+                    <td class="p-5">-</td>
+                    <td class="p-5">-</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="relative py-28 bg-gradient-to-br from-[#982598] to-[#15173D] section-clip overflow-hidden">
+      <div class="relative z-10 max-w-4xl mx-auto text-center px-6 reveal">
+        <h2 class="text-4xl md:text-5xl font-extrabold mb-6 tracking-wide">
+          Ready to Enter The Xean?
+        </h2>
+
+        <p class="text-gray-200 max-w-2xl mx-auto mb-10 text-lg">
+          Gabung sekarang dan jadi bagian dari komunitas paling unik dan
+          eksklusif.
+        </p>
+
+        <div class="flex justify-center">
+          <a
+            href="https://discord.gg/zkg9Fn5q"
+            class="relative inline-flex items-center gap-3 px-12 py-4 rounded-full font-bold text-[#15173D] bg-white transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_#E491C9]">
+            <i class="fa-brands fa-discord text-lg"></i>
+            Get Invitation
+            <span
+              class="absolute inset-0 rounded-full border-2 border-white opacity-20 animate-ping"></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="py-10 text-center text-gray-200">© 2026 Xean Academy</footer>
+
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+    <script>
+      particlesJS("particles-js", {
+        particles: {
+          number: { value: 80, density: { enable: true, value_area: 800 } },
+          color: { value: "#ffffff" },
+          shape: {
+            type: "circle",
+            stroke: { width: 0, color: "#000000" },
+            polygon: { nb_sides: 5 },
+            image: { src: "img/github.svg", width: 100, height: 100 },
+          },
+          opacity: {
+            value: 0.5,
+            random: false,
+            anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false },
+          },
+          size: {
+            value: 3,
+            random: true,
+            anim: { enable: false, speed: 40, size_min: 0.1, sync: false },
+          },
+          line_linked: {
+            enable: true,
+            distance: 150,
+            color: "#ffffff",
+            opacity: 0.4,
+            width: 1,
+          },
+          move: {
+            enable: true,
+            speed: 2,
+            direction: "none",
+            random: false,
+            straight: false,
+            out_mode: "out",
+            bounce: false,
+            attract: { enable: false, rotateX: 600, rotateY: 1200 },
+          },
+        },
+        interactivity: {
+          detect_on: "canvas",
+          events: {
+            onhover: { enable: true, mode: "repulse" },
+            onclick: { enable: false, mode: "push" },
+            resize: true,
+          },
+          modes: {
+            grab: { distance: 400, line_linked: { opacity: 1 } },
+            bubble: {
+              distance: 400,
+              size: 40,
+              duration: 2,
+              opacity: 8,
+              speed: 10,
+            },
+            repulse: { distance: 200, duration: 0.4 },
+            push: { particles_nb: 4 },
+            remove: { particles_nb: 2 },
+          },
+        },
+        retina_detect: true,
+      });
+      var count_particles, stats, update;
+      stats = new Stats();
+      stats.setMode(0);
+      stats.domElement.style.position = "absolute";
+      stats.domElement.style.left = "0px";
+      stats.domElement.style.top = "0px";
+      document.body.appendChild(stats.domElement);
+      update = function () {
+        stats.begin();
+        stats.end();
+        if (
+          window.pJSDom[0].pJS.particles &&
+          window.pJSDom[0].pJS.particles.array
+        ) {
+          count_particles.innerText =
+            window.pJSDom[0].pJS.particles.array.length;
+        }
+        requestAnimationFrame(update);
+      };
+      requestAnimationFrame(update);
+    </script>
+    <script>
+      const burger = document.getElementById("burger");
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      burger.addEventListener("click", () => {
+        burger.classList.toggle("active");
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      const reveals = document.querySelectorAll(".reveal");
+
+      window.addEventListener("scroll", () => {
+        reveals.forEach((reveal) => {
+          const windowHeight = window.innerHeight;
+          const elementTop = reveal.getBoundingClientRect().top;
+          if (elementTop < windowHeight - 100) {
+            reveal.classList.add("active");
+          }
+        });
+      });
+    </script>
+    <script>
+      const introScreen = document.getElementById("introScreen");
+      const nextSlide = document.getElementById("nextSlide");
+      const introSlider = document.getElementById("introSlider");
+      const openMain = document.getElementById("openMain");
+
+      const slide1Content = document.getElementById("slide1Content");
+      const slide2Content = document.getElementById("slide2Content");
+
+      // ✅ CEK apakah intro sudah pernah ditampilkan
+      if (sessionStorage.getItem("introShown")) {
+        introScreen.remove();
+      } else {
+        window.addEventListener("load", () => {
+          setTimeout(() => {
+            slide1Content.classList.remove("opacity-0", "translate-y-10");
+          }, 400);
+        });
+      }
+
+      nextSlide?.addEventListener("click", () => {
+        introSlider.style.transform = "translateX(-100vw)";
+        slide2Content.classList.remove("opacity-0", "translate-y-10");
+      });
+
+      openMain?.addEventListener("click", () => {
+        // Tandai sudah tampil
+        sessionStorage.setItem("introShown", "true");
+
+        introScreen.style.transition = "all 1s ease";
+        introScreen.style.opacity = "0";
+        introScreen.style.filter = "blur(20px)";
+        introScreen.style.transform = "scale(1.1)";
+
+        setTimeout(() => {
+          introScreen.remove();
+        }, 1000);
+      });
+    </script>
+    <script>
+      particlesJS("introParticles", {
+        particles: {
+          number: { value: 60 },
+          color: { value: "#FFFFFF" },
+          shape: { type: "circle" },
+          opacity: { value: 0.3 },
+          size: { value: 3, random: true },
+          line_linked: {
+            enable: true,
+            distance: 150,
+            color: "#E491C9",
+            opacity: 0.2,
+            width: 1,
+          },
+          move: {
+            enable: true,
+            speed: 1,
+            direction: "none",
+            out_mode: "out",
+          },
+        },
+        interactivity: {
+          events: {
+            onhover: { enable: true, mode: "repulse" },
+          },
+          modes: {
+            repulse: { distance: 100 },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
